@@ -1,0 +1,16 @@
+.angular-logo {
+    max-width: 9.2rem;
+}
+.min-h-full {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    main {
+        flex: 1;
+    }
+
+    footer {
+        flex: 0;
+    }
+}
