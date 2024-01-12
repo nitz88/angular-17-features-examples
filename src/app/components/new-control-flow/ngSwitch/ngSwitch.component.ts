@@ -1,12 +1,12 @@
 
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'feature-1-ng-switch',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule],
   template: `
     <div class="mx-auto w-full max-w-xs">
       <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -30,16 +30,27 @@ import { FormsModule } from '@angular/forms';
       </div>
     </div>
     <div class="text-center text-gray-500 text-xs">
-      <div *ngSwitch="age">
-        <div *ngSwitchCase="1">One</div>
-      </div>
-      <div [ngSwitch]="age">
-        <div *ngSwitchCase="1">One</div>
-        <div *ngSwitchCase="2">Two</div>
-        <div *ngSwitchCase="3">Three</div>
-        <div *ngSwitchCase="4">Four</div>
-        <div *ngSwitchCase="5">Five</div>
-        <div *ngSwitchDefault>This is Default</div>
+      <div>
+        @switch (age) {
+          @case (1) {
+            <div>One</div>
+          }
+          @case (2) {
+            <div>Two</div>
+          }
+          @case (3) {
+            <div>Three</div>
+          }
+          @case (4) {
+            <div>Four</div>
+          }
+          @case (5) {
+            <div>Five</div>
+          }
+          @default {
+            <div>This is Default</div>
+          }
+        }
       </div>
     </div>
     `,
